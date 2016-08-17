@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {FormBuilder, ControlGroup, Validators} from '@angular/common';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   templateUrl: 'build/pages/my-form/my-form.html',
 })
 export class MyFormPage {
 
-  myForm: ControlGroup;
+  myForm: FormGroup;
   
   constructor(
     private nav: NavController,

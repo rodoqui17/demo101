@@ -4,46 +4,49 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-navbar primary *navbar>
-  <ion-title>Formulario</ion-title>
-</ion-navbar>
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Formulario</ion-title>
+  </ion-navbar>
+</ion-header>
+
 
 <ion-content class="form">
-  <form [ngFormModel]="myForm" (ngSubmit)="saveData()">
+  <form [formGroup]="myForm" (ngSubmit)="saveData()">
     <ion-list>
       <ion-item>
         <ion-icon name="person" item-left></ion-icon>
         <ion-label stacked>Nombres:</ion-label>
-        <ion-input ngControl="name" type="text" placeholder="Nombre"></ion-input>
+        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
       </ion-item>
       <ion-item>
         <ion-icon name="person" item-left></ion-icon>
         <ion-label stacked>Apellidos:</ion-label>
-        <ion-input ngControl="lastName" type="text" placeholder="Apellidos"></ion-input>
+        <ion-input formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
       </ion-item>
       <ion-item>
         <ion-icon name="mail" item-left></ion-icon>
         <ion-label stacked>Correo electronico:</ion-label>
-        <ion-input ngControl="email" type="email" placeholder="Email"></ion-input>
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-icon name="calendar" item-left></ion-icon>
         <ion-label stacked>Fecha de nacimiento:</ion-label>
-        <ion-datetime ngControl="dateBirth" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+        <ion-datetime formControlName="dateBirth" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
       </ion-item>
-      <div ngControlGroup="passwordRetry">
+      <div formGroupName="passwordRetry">
         <ion-item>
           <ion-icon name="eye" item-left></ion-icon>
           <ion-label stacked>Contraseña:</ion-label>
-          <ion-input ngControl="password" type="password" placeholder="Contraseña"></ion-input>
+          <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
         </ion-item>
         <ion-item>
           <ion-icon name="eye" item-left></ion-icon>
           <ion-label stacked>Confirmar contraseña:</ion-label>
-          <ion-input ngControl="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
+          <ion-input formControlName="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
         </ion-item>
       </div>
-      <ion-row radio-group ngControl="gender">
+      <ion-row radio-group formControlName="gender">
         <ion-item>
           <ion-icon name="woman" item-left></ion-icon>
           <ion-label>Mujer</ion-label>
