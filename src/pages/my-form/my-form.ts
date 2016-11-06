@@ -3,24 +3,25 @@ import {NavController} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-  templateUrl: 'build/pages/my-form/my-form.html',
+  selector: 'page-form',
+  templateUrl: 'my-form.html',
 })
 export class MyFormPage {
 
   myForm: FormGroup;
   
   constructor(
-    private nav: NavController,
-    private formBuilder: FormBuilder
+    public navCtrl: NavController,
+    public formBuilder: FormBuilder
   ) {
-    this.myForm = this._createMyForm();
+    this.myForm = this.createMyForm();
   }
   
   saveData(){
     console.log(this.myForm.value);
   }
   
-  private _createMyForm(){
+  private createMyForm(){
     return this.formBuilder.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
